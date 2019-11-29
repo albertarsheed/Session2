@@ -1,0 +1,28 @@
+import java.io.*;
+import java.util.*;
+
+public class StringPresent {
+
+	public static void main(String[] args) throws IOException {
+		BufferedReader sc=new BufferedReader(new InputStreamReader(System.in));
+		      int t=Integer.parseInt(sc.readLine().trim());
+		      int v=0;
+		      while(t-->0) {
+		    	  String s=sc.readLine();
+		    	  if(s.equals("++X")) {
+		    		  ++v;
+		    	  }
+		    	  else if(s.equals("X++")) {
+		    		  v++;
+		    	  }
+		    	  else if(s.equals("X--")) {
+		    		  v--;
+		    	  }
+		    	  else if(s.equals("--X")) {
+		    		  --v;
+		    	  }
+		      }
+		      System.out.println(v);
+		  
+    }
+}
