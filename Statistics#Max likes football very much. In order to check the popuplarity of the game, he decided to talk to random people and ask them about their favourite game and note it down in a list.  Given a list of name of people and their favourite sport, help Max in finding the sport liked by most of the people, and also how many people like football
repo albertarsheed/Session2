@@ -1,0 +1,52 @@
+import java.util.*;
+
+public class Footballfavors
+{
+       public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		HashSet<String> hs=new HashSet();
+		HashMap<String,Integer> hm=new HashMap();
+		int n=sc.nextInt();
+		sc.nextLine();
+		while(n-->0) {
+			String s1=sc.next();
+			String s2=sc.next();
+			int tt=hs.size();
+			hs.add(s1);
+			if(hs.size()>tt) {
+				if(hm.get(s2)==null) {
+					hm.put(s2,1);
+				}else {
+					hm.put(s2, hm.get(s2)+1);
+				}
+			}
+			
+		}
+		StringBuilder sb=new StringBuilder();
+		Set<String> ss=hm.keySet();int u=0;
+		for(String ss1:ss) {
+			if(u==0) {
+				sb.append(ss1);u+=1;
+			}else {
+				if(hm.get(ss1)>hm.get(sb.toString())) {
+					sb.delete(0,sb.length());
+					sb.append(ss1);
+				}
+				else if(hm.get(ss1)==hm.get(sb.toString())) {
+					TreeSet<String>tr=new TreeSet();
+					tr.add(ss1);
+					tr.add(sb.toString());
+					sb.delete(0,sb.length());
+					sb.append(tr.first());
+				}
+			}
+		}
+		int ty=0;
+		if(hm.get("football")==null){
+		    ty=0;
+		}else{
+		    ty=hm.get("football");
+		}
+		System.out.println(sb.toString()+"\n"+ty);
+	}
+}
