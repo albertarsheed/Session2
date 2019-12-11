@@ -1,0 +1,24 @@
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.io.*;
+
+public class voladya {
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+	   BufferedReader sc=new BufferedReader(new InputStreamReader(System.in));
+        String s=sc.readLine();
+        s=s.replace("WUB","a");int u=0;
+      for(int i=0;i<s.length();i++) {
+    	  if(s.charAt(i)=='a') {
+    		  if(u>0) {
+    		  System.out.print(" ");}
+    	  }else {
+    		  System.out.print(s.charAt(i));u=1;
+    	  }
+      }
+        
+       System.out.println();
+	}
+
+}
