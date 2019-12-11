@@ -1,0 +1,42 @@
+import java.util.*;
+import java.io.*;
+
+public class FriendPopularity {
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+	   BufferedReader sc=new BufferedReader(new InputStreamReader(System.in));
+      String s1[]=sc.readLine().split(" ");
+      int n=Integer.parseInt(s1[0]);
+      int m=Integer.parseInt(s1[1]);
+      int k=Integer.parseInt(s1[2]);
+      int a[][]=new int[n][m];
+      for(int i=0;i<n;i++) {
+    	  String s2[]=sc.readLine().split(" ");
+    	  for(int j=0;j<m;j++) {
+    		  a[i][j]=Integer.parseInt(s2[j]);
+    	  }
+      }
+      for(int i=0;i<k;i++) {
+    	  String s3[]=sc.readLine().split(" ");
+    	  int r=Integer.parseInt(s3[0]);
+    	  int c=Integer.parseInt(s3[1]);
+    	  int s=Integer.parseInt(s3[2]);
+    	  int d=Integer.parseInt(s3[3]);
+    	 
+    	  for(int y=r-1;y<(r-1)+s;y++) {
+    		  for(int z=c-1;z<(c-1)+s;z++) {
+    			  a[y][z]+=d;
+    		  }
+    	  }
+    	  
+      }
+      
+      for(int i=0;i<a.length;i++) {
+    	  for(int j=0;j<a[0].length;j++) {
+    		  System.out.print(a[i][j]+" ");
+    	  }System.out.println();
+      }
+      
+	}
+
+}
