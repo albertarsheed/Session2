@@ -1,0 +1,53 @@
+import java.io.*;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+public class LittleJhool {
+   public static void main(String[] args) throws NumberFormatException, IOException {
+	   
+	   BufferedReader bf=new BufferedReader(new InputStreamReader(System.in));
+	   int n=Integer.parseInt(bf.readLine().trim());
+	   ArrayList<Character>ss=new ArrayList();
+	   for(char aa='a';aa<='z';aa++) {
+		   ss.add(aa);
+	   }
+	   while(n-->0) {
+		   String s=bf.readLine();
+		   HashMap<Character,Integer>hs=new HashMap();
+		   for(int i=0;i<s.length();i++) {
+			   if(hs.get(s.charAt(i))==null) {
+				   hs.put(s.charAt(i),1);
+				   
+			   }else {
+				   hs.put(s.charAt(i),hs.get(s.charAt(i))+1);
+			   }
+		   }
+		   
+		   for(char aaa='z';aaa>='a';aaa--) {
+			   if(!hs.containsKey(aaa) ){
+				  System.out.print(aaa+" "); 
+			   }
+		   }
+		   while(hs.size()!=0) {
+			   Set<Character>dd=hs.keySet();
+			   char min='a';int aw=1980898988;
+			   for(Character d:dd) {
+				 if(hs.get(d)<aw) {
+					 aw=hs.get(d);
+					 min=d;
+				 }else if(hs.get(d)==aw) {
+					 if(d>min) {
+						 min=d;
+					 }
+				 }
+			   }
+			   System.out.print(min+" ");
+			   hs.remove(min, aw);
+		   }
+		   
+		   System.out.println();
+		   
+	   }
+   }
+	
+}
