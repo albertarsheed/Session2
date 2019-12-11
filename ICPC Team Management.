@@ -1,0 +1,37 @@
+
+import java.util.*;
+
+public class TestClass {
+    public static void main(String args[] ) throws Exception {
+        
+       Scanner sc=new Scanner(System.in);
+         int t=sc.nextInt();
+         while(t-->0){
+              int n=sc.nextInt();
+              int k=sc.nextInt();
+              sc.nextLine();
+              ArrayList<Integer>ar=new ArrayList();
+              for(int i=0;i<n;i++) {
+              String s=sc.next();
+              ar.add(s.length());}int u=0;
+             Collections.sort(ar);boolean b=true;
+             for(int i=0;i<ar.size();) {
+            	 int y=Collections.frequency(ar,ar.get(i));
+            	 if(y%k!=0) {
+            		 b=false;
+            		 break;
+            	 }
+            	 i=i+y;u=u+(y/k);
+            	 
+             }
+             if((b==false||u!=(n/k))&&k!=1) {
+            	 System.out.println("Not possible");
+             }else {
+            	 System.out.println("Possible");
+             }
+            // System.out.println(ar);
+         }
+        
+
+    }
+}
