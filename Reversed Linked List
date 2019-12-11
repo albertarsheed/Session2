@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class reverseLinkedList {
+   public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int n=sc.nextInt();
+	int a[]=new int[n+1];
+	for(int i=0;i<n;i++) {
+		a[i]=sc.nextInt();
+	}
+	int z=0;int j=0;a[n]=13;
+	for(int i=0;i<n;i++) {
+		
+		if(a[i]%2==1) {
+			System.out.print(a[i]+" ");j=i;
+		}
+		else {
+			z+=1;
+			if(a[i+1]%2==1) {
+				for(int k=i;k>i-z;k--) {
+					System.out.print(a[k]+" ");
+				}
+				z=0;
+			}
+		}
+		
+	}
+	
+	
+}
+}
